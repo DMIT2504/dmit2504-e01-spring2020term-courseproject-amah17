@@ -52,6 +52,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         editTextLat = findViewById(R.id.latitude_edittext);
         editTextLong = findViewById(R.id.longitude_edittext);
+        //We have to request permission from the user for us to use the map.
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PackageManager.PERMISSION_GRANTED);
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("Location");
@@ -59,9 +60,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 try {
+                    //We are getting the latitude and longitude from the Firebase database
                     String databaseLatString = dataSnapshot.child("latitude").getValue().toString().substring(1,dataSnapshot.child("latitude").getValue().toString().length() - 1);
                     String databaseLongString = dataSnapshot.child("longitude").getValue().toString().substring(1,dataSnapshot.child("longitude").getValue().toString().length() - 1);
 
+                    //We are capturing the list of each long and lat into a string array. Then we are taking the first entry of the array
                     String[] stringLat = databaseLatString.split(", ");
                     Arrays.sort(stringLat);
                     String latitude = stringLat[stringLat.length-1].split("=")[1];
@@ -69,8 +72,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Arrays.sort(stringLong);
                     String longitude = stringLat[stringLong.length-1].split("=")[1];
 
+                    //Adding the new coordinates to a new LatLng
                     LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
+                    //Updating the map to add a marker at the position, then moving the camera to it.
                     mMap.addMarker(new MarkerOptions().position(latLng).title(latitude + " , " + longitude));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 }
