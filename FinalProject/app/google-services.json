@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "189031692757",
+    "firebase_url": "https://leafy-pilot-282500.firebaseio.com",
+    "project_id": "leafy-pilot-282500",
+    "storage_bucket": "leafy-pilot-282500.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189031692757:android:4b0ced1f1a6d2b80eae55c",
+        "android_client_info": {
+          "package_name": "ca.nait.locationtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189031692757-jb9vu0j82al1196p94g3i81jkfvqfqe2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.nait.locationtracker",
+            "certificate_hash": "fc1581b2af1ca1618ebee791e180f3c72c017899"
+          }
+        },
+        {
+          "client_id": "189031692757-ulko0pstt3dstaq6kko5864vljgbpa73.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE1mnuBKGayreT1ApHFEEr3My4gFjFWqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189031692757-ulko0pstt3dstaq6kko5864vljgbpa73.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

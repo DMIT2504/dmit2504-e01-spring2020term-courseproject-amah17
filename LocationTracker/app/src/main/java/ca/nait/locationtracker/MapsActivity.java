@@ -70,13 +70,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     String latitude = stringLat[stringLat.length-1].split("=")[1];
                     String[] stringLong = databaseLongString.split(", ");
                     Arrays.sort(stringLong);
-                    String longitude = stringLat[stringLong.length-1].split("=")[1];
+                    String longitude = stringLong[stringLong.length-1].split("=")[1];
 
                     //Adding the new coordinates to a new LatLng
                     LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
                     //Updating the map to add a marker at the position, then moving the camera to it.
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(latitude + " , " + longitude));
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(latitude + ", " + longitude));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 }
                 catch(Exception e) {

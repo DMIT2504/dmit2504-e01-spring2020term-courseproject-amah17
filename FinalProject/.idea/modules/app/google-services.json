@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "148204054988",
+    "firebase_url": "https://locationtrackingappfp.firebaseio.com",
+    "project_id": "locationtrackingappfp",
+    "storage_bucket": "locationtrackingappfp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148204054988:android:292b182b1fb89fcc049569",
+        "android_client_info": {
+          "package_name": "ca.nait.transporttracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148204054988-msa813hbigmn6c28kkjgc1cup22621k5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.nait.transporttracker",
+            "certificate_hash": "fc1581b2af1ca1618ebee791e180f3c72c017899"
+          }
+        },
+        {
+          "client_id": "148204054988-st9qlet16fojfv91001hkuop0k8ov0gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIgYkIlIw-hBt_hZf12xvNbY6PbsRpnOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148204054988-st9qlet16fojfv91001hkuop0k8ov0gp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
