@@ -153,7 +153,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void updateOnClick(View view){
         //This creates child nodes and pushes them to the Firebase Database
+
         mDatabaseReference.child("latitude").push().setValue(editTextLat.getText().toString());
         mDatabaseReference.child("longitude").push().setValue(editTextLong.getText().toString());
+
     }
 }
