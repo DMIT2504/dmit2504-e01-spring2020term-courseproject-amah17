@@ -18,6 +18,7 @@
         android:id="@+id/latitude_edittext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginStart="75dp"
         android:layout_marginTop="550dp"
         android:hint="Latitude"
@@ -29,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="215dp"
         android:layout_marginTop="550dp"
-        android:hint="Latitude"
-        tools:text="Longtitude" />
+        android:hint="Longitude"
+        tools:text="Longitude" />
 
     <Button
         android:id="@+id/button"
@@ -40,4 +41,6 @@
         android:layout_marginTop="600dp"
         android:onClick="updateOnClick"
         android:text="@string/update" />
+
+
 </FrameLayout>
