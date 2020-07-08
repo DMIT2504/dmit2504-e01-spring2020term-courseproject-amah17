@@ -1,0 +1,48 @@
+1. Create an App with a googleMap Activity
+
+2. You need a google maps API key, so follow the link povided in the google_maps_api.xml and follow the steps provided there
+
+4. Next we need to get the firebase. Go to console.firebase.google.com and follow the instructions provided.
+	There SHOULD only be a few changes to the build.gradle(project) and build.gradle(module)
+
+5. Now we must setup our database. Select the project that you just created, should be named the same as the when you got the google maps key.
+	Select Cloud Firestore -> Create Database -> Start in Production mode -> Choose the desired timezone/server -> Done
+
+6. This will take some time to setup the database. Ensure that Read/Write is true in the Rules
+
+7. Go to AndroidMainfest. Added a ensure that the Access Fine Location permission is added. Add another permission of Access Coarse Location
+
+8. Navigate to the MapActivity, and add in the onCreate method: 
+	ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PackageManager.PERMISSION_GRANTED);
+	
+	This asks the user for permission to use the Fine Location, and coarse Location.
+
+9. Navigate to the maps activity xml file. Add two edit Texts and one button. We have to do this for the emulator since we can't (or I don't know how) to spoof the emulators location.
+	You can make it look as you please. Note that one text will be for Longtitude, and the other will be Latitude.
+
+10. Go back to the map activity Java. Check that there is a private GoogleMap mMap; declared
+	Also declare private DatabaseReference mDatabaseReference;
+	As well as LocationListener, Locationmanager, long MIN_TIME = 1000, long MIN_DIST = 5.
+
+11. Within the onCreate, we will assign mDatabaseReference = FirebaseDatabase.getInstance().getReference("Location");
+	AND
+	mDatabaseReference.addValueEventListener(new ValueEventListener())
+
+	This shoudl create two methods, onDataChange and onCancelled
+
+11. I'd also recommend checking you created an onClick method for the button.
+
+12. Go to the onMapReady method
+	ensure there is mMap = googleMap;
+	Comment out the other provided code
+	Assign a new LocatinListener() to mLocationListener.
+	This will create 4 methods. 
+
+13. for onLocationChanged
+	Add a Try catch. In the try: Set the latitude edittext to Double.toString(location.getLatitude())
+	do the same for Longitude
+	In the catch, simply set it to print e to the stacktrace.
+
+14. 
+
+
