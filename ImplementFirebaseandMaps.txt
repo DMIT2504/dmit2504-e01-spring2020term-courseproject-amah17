@@ -8,7 +8,7 @@
 5. Now we must setup our database. Select the project that you just created, should be named the same as the when you got the google maps key.
 	Select Cloud Firestore -> Create Database -> Start in Production mode -> Choose the desired timezone/server -> Done
 
-6. This will take some time to setup the database. Ensure that Read/Write is true in the Rules
+6. This will take some time to setup the database. Make sure to click the REALTIME DATABSE. Ensure that Read/Write is true in the Rules
 
 7. Go to AndroidMainfest. Added a ensure that the Access Fine Location permission is added. Add another permission of Access Coarse Location
 
