@@ -29,20 +29,59 @@
 	mDatabaseReference.addValueEventListener(new ValueEventListener())
 
 	This shoudl create two methods, onDataChange and onCancelled
+	We will need to add some logic to the onDataChange in a try catch
+	try:
+		String databaseLatString = dataSnapshot.child("latitude").getValue().toString().substring(1,dataSnapshot.child("latitude").getValue().toString().length() - 1);
+                    String databaseLongString = dataSnapshot.child("longitude").getValue().toString().substring(1,dataSnapshot.child("longitude").getValue().toString().length() - 1);
 
-11. I'd also recommend checking you created an onClick method for the button.
+                    String[] stringLat = databaseLatString.split(", ");
+                    Arrays.sort(stringLat);
+                    String latitude = stringLat[stringLat.length-1].split("=")[1];
+                    String[] stringLong = databaseLongString.split(", ");
+                    Arrays.sort(stringLong);
+                    String longitude = stringLat[stringLong.length-1].split("=")[1];
 
-12. Go to the onMapReady method
+                    LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(latitude + " , " + longitude));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+	catch:
+		e.printStackTrace();
+
+12. I'd also recommend checking you created an onClick method for the button.
+
+13. Go to the onMapReady method
 	ensure there is mMap = googleMap;
 	Comment out the other provided code
 	Assign a new LocatinListener() to mLocationListener.
 	This will create 4 methods. 
 
-13. for onLocationChanged
+14. for onLocationChanged
 	Add a Try catch. In the try: Set the latitude edittext to Double.toString(location.getLatitude())
 	do the same for Longitude
 	In the catch, simply set it to print e to the stacktrace.
 
-14. 
+15. Outside of the mLocationListener
+	mLocationmanager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+16. Then we need to check the permissions 
+	if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+
+17. Then we are making another Try Catch
+	try:	
+		mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DIST, mLocationListener);
+		mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DIST, mLocationListener);
+	catch:
+		e.printStackTrace();
+
+18. Now we can add our locations to the database. Go to updateOnclick method
+	add:
+		mDatabaseReference.child("latitude").push().setValue(editTextLat.getText().toString());
+		mDatabaseReference.child("longitude").push().setValue(editTextLong.getText().toString());
+
+19. Now when you run the app, you should be able to enter in a long and lat and it will update the map to that location
+	and place a marker. As well as putting those co-ordinates into the firebase database.
+
+
 
 
