@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5C5C5C"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/image" />
+
+    <SeekBar
+        android:id="@+id/positionBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/elapsedTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="0:11"
+            android:textColor="#CCC" />
+
+        <TextView
+            android:id="@+id/remainingTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="240dp"
+            android:text="-1:49"
+            android:textColor="#CCC" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/playBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/play"
+        android:onClick="playBtnClick" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/sound" />
+
+        <SeekBar
+            android:id="@+id/volumeBar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/sound2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Speed"
+            android:textAlignment="center"
+            android:textColor="#0097DC"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/button_speed_decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#303030"
+            android:onClick="speedDecreaseBtn"
+            android:text="-"
+            android:textColor="#0097DC"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/button_speed_reset"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="speedResetBtn"
+            android:text="Reset"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/button_speed_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#303030"
+            android:onClick="speedIncreaseBtn"
+            android:text="+"
+            android:textColor="#0097DC"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_pitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pitch"
+            android:textAlignment="center"
+            android:textColor="#0097DC"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/button_pitch_decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#303030"
+            android:onClick="pitchDecreaseBtn"
+            android:text="-"
+            android:textColor="#0097DC"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/button_pitch_reset"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="pitchResetBtn"
+            android:text="Reset"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/button_pitch_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#303030"
+            android:onClick="pitchIncreaseBtn"
+            android:text="+"
+            android:textColor="#0097DC"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</LinearLayout>
